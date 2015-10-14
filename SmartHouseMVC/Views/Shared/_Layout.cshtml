@@ -1,0 +1,77 @@
+﻿@using System.Web.Optimization
+@using SmartHouseDll
+@using SmartHouseMVC.Models
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartHouse</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/MyStyle.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/MyScript.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 ml-45">
+                <form id="form1">
+                    <div id="panHouse">
+                        @{
+                            House house = (House)Session["home"];
+
+                            Session["room"] = house.Rooms.First().Key;
+
+                            //var lamps = house.Rooms.Values.First().Devices.Values.Where(c => c is Lamp);
+                            //foreach (Lamp lamp in lamps)
+                            //{
+                            //    Html.RenderPartial("Device/Lamp", lamp);
+                            //    Session["device"] = lamp.NameId;
+                            //    //Html.Action("Lamp", "Device");
+                            //}
+
+                            foreach (Room room in house.Rooms.Values)
+                            {
+                                Html.RenderPartial("Device/Room", room);
+                            }
+                        }
+
+
+                    </div>
+                </form>
+                <br />
+            </div>
+            <div class="col-md-3 headerSmart">
+                <div id="Panel1">
+                    <img src="~/Content/Images/12.png" style="margin-top: 30%; margin-left: -25px" />
+                    <img src="~/Content/Images/фон3.png" style="margin-top: 50px; margin-left: -55px; width: 160%" />
+                </div>
+                <br />
+            </div>
+            <div class="col-md-4 tools">
+                <div class="navbar">
+                    <div class="container">
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="li_menu">@Html.ActionLink("Домой", "Index", "Home")</li>
+                                <li class="li_menu">@Html.ActionLink("Редактировать", "RedactTools", "Home")</li>
+                                <li class="li_menu">@Html.ActionLink("Добавить", "AddTools", "Home")</li>
+                                <li class="li_menu">@Html.ActionLink("Удалить", "DelTools", "Home")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+</body>
+</html>
+

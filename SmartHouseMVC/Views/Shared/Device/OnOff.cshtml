@@ -1,0 +1,16 @@
+﻿@using SmartHouseDll
+@model SmartHouseDll.Device
+           
+@if (Model.State == StateOnOff.Off)
+{
+    <a href="/Device/Command/@ViewBag.room/@Model.NameId/on">
+        <img src="~/Content/Images/control_power.png" class="imgBt" />
+    </a>
+}
+else
+{
+    <a href="/Device/Command/@ViewBag.room/@Model.NameId/off">
+        <img src="~/Content/Images/control_power_blue.png" class="imgBt" />
+    </a>
+}
+

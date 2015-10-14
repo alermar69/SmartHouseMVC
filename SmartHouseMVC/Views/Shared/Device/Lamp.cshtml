@@ -1,0 +1,35 @@
+﻿@using SmartHouseDll
+@model SmartHouseDll.Lamp
+
+
+
+<div class="panLamp">
+    <span class="nameDevice">@Model.Name</span>
+
+    @if (Model.State == StateOnOff.Off)
+    {
+        <img src="~/Content/Images/lightbulb.png" class="imgBt" />
+    <a href="/Device/Command/@ViewBag.room/@Model.NameId/on">
+        <img src="~/Content/Images/control_power.png" class="imgBt" />
+    </a>
+    }
+    else
+    {
+        <img src="~/Content/Images/lightbulb_on.png" class="imgBt" />
+    <a href="/Device/Command/@ViewBag.room/@Model.NameId/off">
+        <img src="~/Content/Images/control_power_blue.png" class="imgBt" />
+    </a>
+    }
+
+    @{
+        ViewBag.device = Model.NameId;
+        ViewBag.ligth = Model.Brightness;
+        Html.RenderPartial("Device/Light");
+    }
+
+</div>
+
+
+
+
+

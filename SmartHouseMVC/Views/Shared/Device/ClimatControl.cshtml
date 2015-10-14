@@ -1,0 +1,49 @@
+﻿@using SmartHouseDll
+@model SmartHouseDll.ClimatControl
+
+<div class="panLamp">
+    <span class="nameDevice">@Model.Name</span>
+    <img class="imgBt" src="~/Content/Images/hot.png" />
+    @{
+        ViewBag.device = Model.NameId;
+        ViewBag.temper = Model.Temperature;
+
+        Html.RenderPartial("Device/OnOff");
+    }
+    <span class="labelTemper">@Model.SensorTemperat.CurrentTemperature</span>
+
+    <a href="/Device/Command/@ViewBag.room/@ViewBag.device/cl-Auto">
+        @if (Model.Auto)
+        {
+            <img src="~/Content/Images/AutoOn.png" class="imgBt" />
+        }
+        else
+        {
+            <img src="~/Content/Images/AutoOff.png" class="imgBt" />
+        }
+    </a>
+    <a href="/Device/Command/@ViewBag.room/@ViewBag.device/cl-heat">
+
+        @if (Model.Heat.State == StateOnOff.Off)
+        {
+            <img src="~/Content/Images/hot1.png" class="imgBt" />
+        }
+        else
+        {
+            <img src="~/Content/Images/hot1.png" class="imgBt imgColor" />
+        }
+
+    </a>
+    <a href="/Device/Command/@ViewBag.room/@ViewBag.device/cl-cond">
+        @if (Model.Cond.State == StateOnOff.Off)
+        {
+            <img src="~/Content/Images/ice2.png" class="imgBt" />
+        }
+        else
+        {
+            <img src="~/Content/Images/ice2.png" class="imgBt imgColor" />
+        }
+    </a>
+
+    @Html.Partial("Device/Temper")
+</div>

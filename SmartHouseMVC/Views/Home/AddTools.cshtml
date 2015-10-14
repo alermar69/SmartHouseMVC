@@ -1,0 +1,45 @@
+﻿@using System.Collections
+@model SmartHouseDll.House
+
+
+
+@using (Html.BeginForm("AddRoom", "Home", FormMethod.Post))
+{
+    <div class="panAdd">
+        <fieldset>
+            <legend>
+                Добавить комнату
+            </legend>
+            @Html.TextBox("addRoom", "", new { placeholder = "Имя комнаты" })
+            <br />
+            <br />
+            <input type="submit" value="Добавить" />
+        </fieldset>
+    </div>
+}
+
+@using (Html.BeginForm("AddDevice", "Home", FormMethod.Post))
+{
+    <div class="panAdd">
+        <fieldset>
+            <legend>
+                Добавить устройство
+            </legend>
+            @Html.DropDownList("list_room", new SelectList(Model.Rooms.Values, "Name", "Name"))
+
+            @{
+                var devices = Model.Remote.Commands.Values.
+                    Where(c => c.Name.StartsWith("add") & !c.Inform.Contains("комнату")).
+                    Select(c => c.Inform.Replace("Добавить ", string.Empty));
+            }
+
+            @Html.DropDownList("list_device", new SelectList(devices.ToList()))
+            <br />
+            <br />
+            @Html.TextBox("addDevice", "", new { placeholder = "Имя устройства" })
+            <br />
+            <br />
+            <input type="submit" value="Добавить" />
+        </fieldset>
+    </div>
+}

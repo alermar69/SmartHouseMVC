@@ -1,0 +1,26 @@
+﻿@using SmartHouseDll
+@model SmartHouseDll.Room
+
+<div>
+    <span class="labelRoom">@Model.Name</span>
+    @{
+        foreach (Device device in Model.Devices.Values.OrderBy(c=>c.GetType().FullName))
+        {
+            ViewBag.room = Model.NameId;
+
+            if (device is Lamp)
+            {
+                Html.RenderPartial("Device/Lamp", device as Lamp);
+            }
+            if (device is ClimatControl)
+            {
+                Html.RenderPartial("Device/ClimatControl", device as ClimatControl);
+            }
+            if (device is Tv)
+            {
+                Html.RenderPartial("Device/Tv", device as Tv);
+            }
+        }
+    }      
+
+</div>

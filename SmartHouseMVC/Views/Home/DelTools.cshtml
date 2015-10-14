@@ -1,0 +1,43 @@
+﻿@using System.Collections
+@model SmartHouseDll.House
+
+
+
+@using (Html.BeginForm("DelRoom", "Home", FormMethod.Post))
+{
+    <div class="panAdd">
+        <fieldset>
+            <legend>
+                Удалить комнату
+            </legend>
+            @Html.DropDownList("list_room", new SelectList(Model.Rooms.Values, "Name", "Name"))            
+            <br />
+            <br />
+            <input type="submit" value="Удалить" />
+        </fieldset>
+    </div>
+}
+
+@using (Html.BeginForm("DelDevice", "Home", FormMethod.Post))
+{
+    <div class="panAdd">
+        <fieldset>
+            <legend>
+                Удалить устройство
+            </legend>
+            @Html.DropDownList("list_room_device", new SelectList(Model.Rooms.Values, "Name", "Name", ViewBag.RoomName), new { onchange = "changeItemList1('list_room_device')" }))
+
+            @{
+                if (ViewBag.Devices == null)
+                {
+                    ViewBag.Devices = new SelectList(Model.Rooms.Values.First().Devices.Values, "Name", "Name");
+                }
+            }
+            @Html.DropDownList("list_device", ViewBag.Devices as SelectList);
+            <br />
+            <br />
+            <input type="submit" value="Удалить" />
+        </fieldset>
+    </div>
+}
+

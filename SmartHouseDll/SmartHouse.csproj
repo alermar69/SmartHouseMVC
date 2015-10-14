@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4783FD47-9BC2-48D9-97C0-E4D09A1B960C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartHouseModel</RootNamespace>
+    <AssemblyName>SmartHouseModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication.cs" />
+    <Compile Include="Command\AddClimatControlCommand.cs" />
+    <Compile Include="Command\AddConditionerCommand.cs" />
+    <Compile Include="Command\AddDVDPlayerCommand.cs" />
+    <Compile Include="Command\AddHeatingCommand.cs" />
+    <Compile Include="Command\AddHouseCinemaCommand.cs" />
+    <Compile Include="Command\AddHumidifierCommand.cs" />
+    <Compile Include="Command\AddLampCommand.cs" />
+    <Compile Include="Command\AddRoomCommand.cs" />
+    <Compile Include="Command\AddTvCommand.cs" />
+    <Compile Include="Command\CinemaDvdCommand.cs" />
+    <Compile Include="Command\ClimatAutoCommand.cs" />
+    <Compile Include="Command\ClimatConditionerCommand.cs" />
+    <Compile Include="Command\ClimatHeatingCommand.cs" />
+    <Compile Include="Command\ClimatHumidifierCommand.cs" />
+    <Compile Include="Command\DecrementLightCommand.cs" />
+    <Compile Include="Command\DecrementTemperCommand.cs" />
+    <Compile Include="Command\DecrementVolumeCommand.cs" />
+    <Compile Include="Command\DeleteDeviceCommand.cs" />
+    <Compile Include="Command\DeleteRoomCommand.cs" />
+    <Compile Include="Command\IncremenTemperCommand.cs" />
+    <Compile Include="Device\Humidifier.cs" />
+    <Compile Include="Device\Interface\IClimatControl.cs" />
+    <Compile Include="Reader\ConsoleReader.cs" />
+    <Compile Include="RunHouse.cs" />
+    <Compile Include="Sensor\Sensor.cs" />
+    <Compile Include="Sensor\SensorHumidity.cs" />
+    <Compile Include="Sensor\SensorTemperature.cs" />
+    <Compile Include="Writer\ConsoleWriter.cs" />
+    <Compile Include="Device\ClimatControl.cs" />
+    <Compile Include="Device\Conditioner.cs" />
+    <Compile Include="Device\Device.cs" />
+    <Compile Include="Device\Heating.cs" />
+    <Compile Include="Device\Lamp.cs" />
+    <Compile Include="Device\DVDPlayer.cs" />
+    <Compile Include="Writer\FileWriter.cs" />
+    <Compile Include="House\House.cs" />
+    <Compile Include="Device\HouseCinema.cs" />
+    <Compile Include="Reader\IDataCommand.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\IncrementLightCommand.cs" />
+    <Compile Include="Command\IncrementVolumeCommand.cs" />
+    <Compile Include="Device\Interface\IHouseCinema.cs" />
+    <Compile Include="Device\Interface\ILight.cs" />
+    <Compile Include="Device\Interface\IOnOff.cs" />
+    <Compile Include="Device\Interface\ITemperature.cs" />
+    <Compile Include="Device\Interface\IVolume.cs" />
+    <Compile Include="Enum\LightsState.cs" />
+    <Compile Include="Command\OffCommand.cs" />
+    <Compile Include="Command\OnCommand.cs" />
+    <Compile Include="Reader\IReader.cs" />
+    <Compile Include="Writer\IWriter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Device\TV.cs" />
+    <Compile Include="House\RemoteControl.cs" />
+    <Compile Include="House\Room.cs" />
+    <Compile Include="Enum\StateOnOff.cs" />
+    <Compile Include="Reader\Storage.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

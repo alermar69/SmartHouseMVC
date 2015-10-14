@@ -1,0 +1,39 @@
+﻿@using SmartHouseDll
+
+@{
+    string id = "enumLight_" + ViewBag.room + "_" + ViewBag.device;
+}
+<div class="panLight">
+    <img class="imgBt" src="~/Content/Images/litgh.png" />
+    <select id=@id class="enumLight" onchange="changeItemList('@id', '/Device/LigthSelect/', '@ViewBag.room', '@ViewBag.device')">
+        @{
+            //LightsState lightsState = (LightsState)ViewBag.ligth;
+            if (ViewBag.ligth == LightsState.Low)
+            {
+                <option value=@LightsState.Low selected="selected">Слабая</option>
+            }
+            else
+            {
+                <option value=@LightsState.Low>Слабая</option>
+            }
+
+            if (ViewBag.ligth == LightsState.Medium)
+            {
+                <option value=@LightsState.Medium selected="selected">Средняя</option>
+            }
+            else
+            {
+                <option value=@LightsState.Medium>Средняя</option>
+            }
+
+            if (ViewBag.ligth == LightsState.High)
+            {
+                <option value=@LightsState.High selected="selected">Высокая</option>
+            }
+            else
+            {
+                <option value=@LightsState.High>Высокая</option>
+            }
+        }
+    </select>
+</div>

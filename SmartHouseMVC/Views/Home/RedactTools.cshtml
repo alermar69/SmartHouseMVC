@@ -1,0 +1,46 @@
+﻿@model SmartHouseDll.House
+
+@using (Html.BeginForm("RedactRoom", "Home", FormMethod.Post))
+{
+    <div class="panAdd">
+        <fieldset>
+            <legend>
+                Редактировать комнату
+            </legend>
+            @Html.DropDownList("list_room", new SelectList(Model.Rooms.Values, "Name", "Name"))
+            <br />
+            <br />
+            @Html.TextBox("redactRoom", "", new { placeholder = "Новое имя комнаты" })
+            <br />
+            <br />
+            <input type="submit" value="Редактировать" />
+        </fieldset>
+    </div>
+}
+
+@using (Html.BeginForm("RedactDevice", "Home", FormMethod.Post))
+{
+    <div class="panAdd">
+        <fieldset>
+            <legend>
+                Редактировать устройство
+            </legend>
+            @Html.DropDownList("list_room_device", new SelectList(Model.Rooms.Values, "Name", "Name", ViewBag.RoomName), new { onchange = "changeItemList1('list_room_device')" }))
+            
+            @{
+                if (ViewBag.Devices == null)
+                {
+                    ViewBag.Devices = new SelectList(Model.Rooms.Values.First().Devices.Values, "Name", "Name");
+                }               
+            }
+            @Html.DropDownList("list_device", ViewBag.Devices as SelectList);
+            <br />
+            <br />
+            @Html.TextBox("redactDevice", "", new { placeholder = "Новое имя устройства" })
+            <br />
+            <br />
+            <input type="submit" value="Редактировать" />
+        </fieldset>
+    </div>
+}
+

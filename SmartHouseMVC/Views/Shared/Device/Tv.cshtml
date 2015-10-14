@@ -1,0 +1,27 @@
+﻿@using SmartHouseDll
+@model SmartHouseDll.Tv
+
+<div class="panLamp">
+    <span class="nameDevice">@Model.Name</span>
+
+    @if (Model.State == StateOnOff.Off)
+    {       
+        <img src="~/Content/Images/television.png" class="imgBt" />
+    }
+    else
+    {
+        <img src="~/Content/Images/932273044.gif" class="imgBt" />
+    }
+
+    @{
+        ViewBag.device = Model.NameId;
+        ViewBag.vol = Model.Volume;
+        ViewBag.ligth = Model.Brightness;
+
+        Html.RenderPartial("Device/OnOff");
+        Html.RenderPartial("Device/Light");
+        Html.RenderPartial("Device/Volume");
+    }
+
+
+</div>

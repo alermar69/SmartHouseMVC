@@ -1,0 +1,224 @@
+﻿body
+{
+	background: #272D30;
+}
+
+legend
+{
+	color: magenta;
+}
+
+
+
+select
+{
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	background: #f0eded;
+	height: 24px;
+	padding: 0 10px;
+	color: #2b37ca;
+	font-size: 15px;
+	font-family: Tahoma;
+}
+option
+{
+	background: #f2e4a9 !important;
+	color: #2b37ca;
+}
+
+input[type="submit"]
+{
+	border: 1px solid #f21212;
+	border-radius: 5px;
+	background: #a19e9e !important;
+	height: 24px;
+	min-width: 125px;
+	min-height: 30px;
+	padding: 5px 10px;
+	color: #10100e;
+	font-size: 12px;
+	font-family: Tahoma;
+}
+
+input[type="text"]
+{
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	background: #f0eded !important;
+	height: 24px;
+	width: 120px;
+	color: #2b37ca;
+	font-size: 11px;
+	font-family: Tahoma;
+}
+
+input[type="text"]:focus
+{
+	color: #000000;
+	border: 1px solid #000000;
+}
+
+.li_menu {
+    padding: -10px;
+    font-size: 10px;
+}
+
+.ml-45
+{
+	margin-left: -45px;
+}
+
+.menu
+{
+	margin-top: 20px;
+	margin-left: 15px;
+}
+
+.tools
+{	
+	position: fixed;
+	right: 10px;
+}
+
+.panAdd
+{
+	margin: 20px 0px 80px 30px;
+}
+
+.panLamp
+{
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.nameDevice, .panLight, .panVolume, .panTemper, .labelPanel, .enumLight, .labelVolume, 
+.labelTemper, .labelTemperat, .imgBt{
+	float: left;
+	height: 100%;
+}
+
+.nameDevice
+{
+	width: 15%;
+	color: lightsteelblue;
+	font-weight: bold;
+	margin-left: 5px;
+	font-size: 15px;
+}
+
+.panLight
+{
+	margin-left: 5px;
+}
+
+.panVolume
+{
+	background: rgba(222, 184, 135, 0.4);
+	margin-left: 5px;
+}
+
+.panTemper
+{
+	background: rgba(135, 222, 200, 0.8);
+	margin-left: 5px;
+}
+
+.labelPanel
+{
+	margin-left: 5px;
+}
+
+.labelRoom
+{
+	/* border: 1px solid black; Параметры рамки */
+	border-bottom: none; /* Убираем линию снизу */
+	padding-bottom: 5px;
+	display: inline-block; /* Устанавливаем как встроенный элемент */
+	color: rgb(203, 99, 10);
+	font-weight: bold; /* Жирное начертание */
+	font-size: 200%; /* Размер текста */
+	margin: 0; /* Убираем отступы вокруг */
+	margin-left: 100px;
+	white-space: nowrap; /* Отм*/
+	width: 100%; /*text-align: center;*/
+}
+
+.enumLight
+{
+	background: rgb(245, 239, 186);
+    font-size: 10px;
+}
+
+.labelVolume
+{
+	color: rgb(245, 221, 102);
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.labelTemper
+{
+	width: 50px;
+	background: rgb(34, 78, 220);
+	color: #f0eded;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.labelTemperat
+{
+	color: rgb(17, 26, 28);
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.imgBt
+{
+	margin: 0 5px;
+}
+.imgBtV
+{
+	float: left;
+	height: 80%;
+	margin: 2px;
+}
+
+.imgColor
+{
+	background: rgb(248, 211, 75);
+}
+
+.static
+{
+	margin: 0 2px;
+	color: darkorange;
+}
+.headerSmart
+{
+	position: fixed;
+	left: 40%;
+}
+
+.block-inline-center
+{
+	display: inline-block;
+	text-align: center;
+}
+
+.link_button {
+            text-align: center;
+            border: 1px solid;
+            border-radius: 5px;
+            min-width: 50px;
+            display: inline-block;
+            padding: 5px 5px;
+            text-decoration: none;
+            color: rgb(224, 18, 18);
+            background-color: #DDD;
+        }

@@ -117,6 +117,8 @@
     <Content Include="Content\MyStyle.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="lib\System.Web.Optimization.dll" />
+    <Content Include="lib\WebGrease.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
